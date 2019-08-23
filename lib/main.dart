@@ -8,47 +8,60 @@ class Product {
 
 void main(List<String> args) {
   runApp(MaterialApp(
-    title: 'Navigation transport params',
-    home: ProductList(
-      products:List.generate(20, (i) => Product('Shopping Centre: Goods $i', 'Shopping Centre: This is a goods Detial, number: $i'))),
-    ),
-  );
+    title: 'Page Back Data',
+    home: FirstPage(),
+  ));
 }
 
-class ProductList extends StatelessWidget {
-  final List<Product> products;
-  ProductList({Key key, @required this.products}):super(key: key);
+class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Goods List')),
-      body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index){
-          return ListTile(
-            title: Text(products[index].title),
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context) => ProductDetail(product: products[index]),
-                ));
-            },
-          );
-        },
-      ),
+      appBar: AppBar(title: Text('Get Phone Number'),),
+      body: Center(child: RouteButton(),) 
     );
   }
 }
 
-class ProductDetail extends StatelessWidget {
-  final Product product;
+class RouteButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: (){_navigateToLittleGile(context);},
+      child: Text('See Little Gril'),
+    );
+  }
 
-  ProductDetail({Key key, @required this.product}):super(key:key);
+  _navigateToLittleGile(BuildContext context) async {
+    final result = await Navigator.push(context, MaterialPageRoute(
+      builder: (context) => LittleGril()
+    ));
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text('${result}'),));
+  }
+}
+
+class LittleGril extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('${product.title}'),),
+      appBar: AppBar(title: Text('I am a little gril.'),),
       body: Center(
-        child: Text('${product.description}'),
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('long leg little gril'),
+              onPressed: (){
+                Navigator.pop(context, 'long leg little gril, 13801234567');
+              },
+            ),
+            RaisedButton(
+              child: Text('big bar little gril'),
+              onPressed: (){
+                Navigator.pop(context, 'big bar little gril, 13901234567');
+              },
+            )
+          ],
+        ),
       ),
     );
   }
