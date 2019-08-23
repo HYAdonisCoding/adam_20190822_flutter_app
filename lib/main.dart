@@ -8,31 +8,36 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var stack = new Stack(
-      alignment: const FractionalOffset(0.5, 0.9),
-      children: <Widget>[
-        new CircleAvatar(
-          backgroundImage: new NetworkImage('http://img5.mtime.cn/CMS/News/2019/08/23/083416.91255969_620X620.jpg'),
-          radius: 100.0,
-        ),
-        new Positioned(
-          top: 10.0,
-          left: 10.0,
-          child: new Text('燕云少君'),
-        ),
-        new Positioned(
-          bottom: 10.0,
-          right: 10.0,
-          child: new Text('Adonis'),
-        ),
-      ],
+    var card = new Card(
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            title: Text('北京市石景山区政达路6号院', style: TextStyle(fontWeight: FontWeight.w500),),
+            subtitle: new Text('光大信用卡中心'),
+            leading: new Icon(Icons.account_box, color: Colors.lightBlue),
+          ),
+          new Divider(),
+          ListTile(
+            title: Text('北京市丰台区马家堡', style: TextStyle(fontWeight: FontWeight.w500),),
+            subtitle: new Text('燕云少君'),
+            leading: new Icon(Icons.account_box, color: Colors.lightBlue),
+          ),
+          new Divider(),
+          ListTile(
+            title: Text('北京市密云区新南路', style: TextStyle(fontWeight: FontWeight.w500),),
+            subtitle: new Text('Adam:13901234567'),
+            leading: new Icon(Icons.account_box, color: Colors.lightBlue),
+          ),
+          new Divider(),
+        ],
+      ),
     );
     return MaterialApp(
-      title: 'Stack Widget Demo',
+      title: 'Card Widget Demo',
       home: Scaffold(
-        appBar: new AppBar(title: new Text('Stack Widget')),
+        appBar: new AppBar(title: new Text('Card Widget')),
         body: Center(
-          child: stack,
+          child: card,
         )
       ),
     );
