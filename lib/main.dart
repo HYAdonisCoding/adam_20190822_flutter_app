@@ -15,13 +15,16 @@ class MyApp extends StatelessWidget {
           backgroundImage: new NetworkImage('http://img5.mtime.cn/CMS/News/2019/08/23/083416.91255969_620X620.jpg'),
           radius: 100.0,
         ),
-        new Container(
-          decoration: new BoxDecoration(
-            color: Colors.lightBlue,
-          ),
-          padding: EdgeInsets.all(5.0),
-          child: Text('燕云少君'),
-        )
+        new Positioned(
+          top: 10.0,
+          left: 10.0,
+          child: new Text('燕云少君'),
+        ),
+        new Positioned(
+          bottom: 10.0,
+          right: 10.0,
+          child: new Text('Adonis'),
+        ),
       ],
     );
     return MaterialApp(
