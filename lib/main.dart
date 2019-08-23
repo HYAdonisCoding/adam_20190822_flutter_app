@@ -9,29 +9,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Adam Flutter Demo',
+      title: 'Row Widget Demo',
       home: Scaffold(
-        appBar: new AppBar(title: new Text('GridView Widget')),
-        body: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 10.0,
-            crossAxisSpacing: 10.0,
-            childAspectRatio: 2.0
+        appBar: new AppBar(title: new Text('Row Widget')),
+        body: new Row(
+          children: <Widget>[
+            //不灵活的
+             new RaisedButton(
+                onPressed: (){},
+                color: Colors.red,
+                child: new Text('Red'),
+              ),
+              //灵活的布局
+            Expanded(
+              child: new RaisedButton(
+                onPressed: (){},
+              color: Colors.orangeAccent,
+              child: new Text('orange Button'),
+              ),
             ),
-            children: <Widget>[
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/111547.33075165_285X160X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/103636.40668859_285X160X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/103532.58790369_285X160X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/101717.21164296_285X160X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/100625.19492817_285X160X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/093258.22915266_285X160X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/100110.35589457_280X138X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/110602.63034284_280X138X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/100725.48978072_280X138X4.jpg', fit: BoxFit.cover),
-              new Image.network('http://img5.mtime.cn/mg/2019/08/23/001325.58040992_280X138X4.jpg', fit: BoxFit.cover),
-            ],
-      
+            new RaisedButton(
+                onPressed: (){},
+                color: Colors.lightBlue,
+                child: new Text('lightBlue'),
+              ),
+          ],
         )
       ),
     );
