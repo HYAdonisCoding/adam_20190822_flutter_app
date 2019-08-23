@@ -8,21 +8,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var stack = new Stack(
+      alignment: const FractionalOffset(0.5, 0.9),
+      children: <Widget>[
+        new CircleAvatar(
+          backgroundImage: new NetworkImage('http://img5.mtime.cn/CMS/News/2019/08/23/083416.91255969_620X620.jpg'),
+          radius: 100.0,
+        ),
+        new Container(
+          decoration: new BoxDecoration(
+            color: Colors.lightBlue,
+          ),
+          padding: EdgeInsets.all(5.0),
+          child: Text('燕云少君'),
+        )
+      ],
+    );
     return MaterialApp(
-      title: 'Columnr Widget Demo',
+      title: 'Stack Widget Demo',
       home: Scaffold(
-        appBar: new AppBar(title: new Text('Column Widget')),
+        appBar: new AppBar(title: new Text('Stack Widget')),
         body: Center(
-          child: new Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('I am adam.'),
-            Expanded(child: Text('I am web www.baidu.com.'),),
-            Text('I am coding.'),
-            Text('I am bush.'),
-          ],
-        ),)
+          child: stack,
+        )
       ),
     );
   }
