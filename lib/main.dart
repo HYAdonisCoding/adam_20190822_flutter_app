@@ -9,29 +9,17 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: Container(
-            child: new Text(
-            'Hello Text Widget,Hello JSPang',
-            // textAlign: TextAlign.left,
-            maxLines: 1,
-            style: TextStyle(
-              fontSize: 40.0,
-              color: Color.fromARGB(255, 255, 150, 150),
-              decoration: TextDecoration.underline,
-              decorationStyle: TextDecorationStyle.solid,
+            child: new Image.network(
+              'https://avatars0.githubusercontent.com/u/17538734?s=400&u=be0601aa0129998afb933c0b2ffae23a7f17ecdc&v=4',
+              scale:1.0,
+              // fit: BoxFit.cover,
+              // color: Colors.greenAccent,
+              // colorBlendMode: BlendMode.modulate,
+              repeat: ImageRepeat.repeatY,
             ),
-          ),
-          alignment: Alignment.topLeft,
-          width: 500.0,
-          height: 400.0,
-          // color: Colors.lightBlue,
-          padding: const EdgeInsets.fromLTRB(10.0, 30.0, 20.0, 20.0),
-          margin: const EdgeInsets.all(10.0),
-          decoration: new BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]
-            ),
-            border: Border.all(width: 1.0, color: Colors.pink)
-          ),
+            width: 300.0,
+            height: 200.0,
+            color: Colors.lightBlue,
           ),
         ),
       ),
