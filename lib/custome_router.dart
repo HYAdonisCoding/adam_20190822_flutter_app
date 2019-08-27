@@ -54,6 +54,6 @@ class CustomRoute extends PageRouteBuilder{
           curve:Curves.fastOutSlowIn)),
           child: child,
     );
-
+      });
 }
 
