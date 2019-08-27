@@ -5,7 +5,7 @@ const searchList = [
   'boy_fresh'
 ];
 
-const recentSugggesst = [
+const recentSugggest = [
   '推荐1',
   '推荐2'
 ];
