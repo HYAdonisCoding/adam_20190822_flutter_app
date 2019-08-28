@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';
+import 'right_back_demo.dart';
 
 void main()=>runApp(MyApp());
 
@@ -7,11 +7,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Splash Screen',
+      title: 'Flutter Right Back',
       debugShowCheckedModeBanner: false,
-      //自定义主题样本
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: SplashScreen()
+      theme: ThemeData.dark(),
+      home: RightBackDemo(1),
     );
   }
 }
